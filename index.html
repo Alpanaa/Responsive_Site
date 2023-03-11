@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Screen size</title>
+</head>
+<body>
+    <div id="screen"></div>
+    <div class="container">
+        <img/>
+    </div>
+
+    <div id="size"></div>
+</body>
+
+<script>
+    window.onresize=screen;
+    window.onload=screen;
+
+    function screen(){
+       const myWidth=window.innerWidth;
+        const myHeight=window.innerHeight;
+
+        document.getElementById('size').innerHTML="Width: "+myWidth+"px"+"</br>"+"Height: "+myHeight+"px";
+
+        const img = document.querySelector("img"); 
+        if(myWidth>=0 && myWidth<=576){
+            document.getElementById('screen').innerHTML="Mobile";
+            img.src = "mobile.jpeg";
+        }
+
+        else if(myWidth>=577 && myWidth<=798){
+            document.getElementById('screen').innerHTML="tablet";
+            img.src = "tablet.jpeg";
+        }
+
+        else if(myWidth>=799 && myWidth<=992){
+            document.getElementById('screen').innerHTML="Laptop";
+            img.src = "laptop.jpeg";
+        }
+
+        else if(myWidth>=993 && myWidth<=2000){
+            document.getElementById('screen').innerHTML="Desktop";
+            img.src = "desktop.jpeg";
+        }
+
+    }
+</script>
+</html>
